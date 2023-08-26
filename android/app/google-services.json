@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "696035723084",
+    "project_id": "surveyapp1-venu",
+    "storage_bucket": "surveyapp1-venu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696035723084:android:4abb91c067331830ef71e9",
+        "android_client_info": {
+          "package_name": "com.example.surveyhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696035723084-goetp4372aaai6r06vmpl71fita8406e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.surveyhub",
+            "certificate_hash": "eca9ade7e1d6750b3522718b2e9e1d4d9351b7f0"
+          }
+        },
+        {
+          "client_id": "696035723084-7t80ni635rlt60e2k5jbngfscv00369l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL3OS9Zd_EYnBL-DYr5oey8XC-K1aZvl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696035723084-7t80ni635rlt60e2k5jbngfscv00369l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
