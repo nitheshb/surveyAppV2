@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   bottom_navy_bar: ^6.0.0
+  multiselect:
   google_fonts:
 
 
