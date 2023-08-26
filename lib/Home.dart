@@ -11,7 +11,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   Widget Conbox(Surveynumber, priority, Constitution, Participants) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(right:16.0, top: 4.0),
       child: Container(
         width: 200,
         height: 150,
@@ -99,113 +99,118 @@ class _HomeState extends State<Home> {
     return Scaffold(
         backgroundColor: Color(0xFFF5F5F5),
         body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              children: [
-                ProfileBar(
-                  usertype: "Super User",
-                  name: "Monesh D",
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
+          child: Column(
+            children: [
+              ProfileBar(
+                      usertype: "Super User",
+                      name: "Monesh D",
+                    ),
+              Padding(
+                padding: const EdgeInsets.only(left:20.0, right: 20.0, bottom: 20.0, top: 10.0),
+                child: Column(
+                  children: [
+                    
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "My Constitutions",
+                                  style: TextStyle(
+                                      fontSize: 18, fontWeight: FontWeight.w600),
+                                ),
+                                Text("3 Constitutions")
+                              ]),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.menu),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Icon(Icons.add),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      // decoration: BoxDecoration(color: Colors.white),
+                      child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(children: [
+                            Conbox("3", "High", "Anna Nagar", "70k"),
+                            Conbox("3", "High", "Anna Nagar", "70k"),
+                            Conbox("3", "High", "Anna Nagar", "70k")
+                          ])),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "My Constitutions",
+                              "Today’s Active Survery’s",
                               style: TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.w600),
                             ),
-                            Text("10 Chepauk")
-                          ]),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          Icon(Icons.menu),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(Icons.add),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  // decoration: BoxDecoration(color: Colors.white),
-                  child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(children: [
-                        Conbox("3", "High", "Anna Nagar", "70k"),
-                        Conbox("3", "High", "Anna Nagar", "70k"),
-                        Conbox("3", "High", "Anna Nagar", "70k")
-                      ])),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Today’s Active Survery’s",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w600),
+                            Text(
+                              "3 Tasks Pending",
+                              style: TextStyle(
+                                  fontSize: 12, fontWeight: FontWeight.w400),
+                            )
+                          ],
                         ),
-                        Text(
-                          "3 Tasks Pending",
-                          style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w400),
+                      ],
+                    ),
+                    Column(
+                      // physics: const AlwaysScrollableScrollPhysics(),
+                      // shrinkWrap: true,
+                      children: [
+                        SurveyCard(
+                          surveyname: "Lok Sabha 2024",
+                          location: "Anna Nagar",
+                          deadline: "30-12-2023",
+                          participant: "100k",
+                        ),
+                        SurveyCard(
+                          surveyname: "Health Survey - 1",
+                          deadline: "19-11-2023",
+                          location: "Harbour",
+                          participant: "50k",
+                        ),
+                        SurveyCard(
+                          surveyname: "General-2",
+                          deadline: "12-10-2023",
+                          location: "Kolathur",
+                          participant: "50k",
+                        ),
+                        SurveyCard(
+                          surveyname: "9 Years of Modi",
+                          deadline: "08-10-2023",
+                          location: "Chepauk",
+                          participant: "10k",
                         )
                       ],
                     ),
                   ],
                 ),
-                Column(
-                  // physics: const AlwaysScrollableScrollPhysics(),
-                  // shrinkWrap: true,
-                  children: [
-                    SurveyCard(
-                      surveyname: "Lok Sabha 2024",
-                      location: "Anna Nagar",
-                      deadline: "30-12-2023",
-                      participant: "100k",
-                    ),
-                    SurveyCard(
-                      surveyname: "Health Survey - 1",
-                      deadline: "19-11-2023",
-                      location: "Harbour",
-                      participant: "50k",
-                    ),
-                    SurveyCard(
-                      surveyname: "General-2",
-                      deadline: "12-10-2023",
-                      location: "Kolathur",
-                      participant: "50k",
-                    ),
-                    SurveyCard(
-                      surveyname: "9 Years of Modi",
-                      deadline: "08-10-2023",
-                      location: "Chepauk",
-                      participant: "10k",
-                    )
-                  ],
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ));
   }

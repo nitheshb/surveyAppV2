@@ -19,12 +19,12 @@ class _SurveyListState extends State<SurveyList> {
           child: Container(
               padding: const EdgeInsets.all(20.0),
               child: Column(children: [
-                ProfileBar(
-                  name: "Monesh D",
-                  usertype: "Super User",
-                ),
+                // ProfileBar(
+                //   name: "Monesh D",
+                //   usertype: "Super User",
+                // ),
                 SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
