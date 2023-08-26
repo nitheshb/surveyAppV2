@@ -103,46 +103,9 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                Container(
-                  child: Column(children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.person),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("Super User"),
-                                  Text(
-                                    "Monesh D",
-                                    style: TextStyle(
-                                        color: Color(0xFF000B23),
-                                        fontWeight: FontWeight.w600),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Icon(Icons.search),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Icon(Icons.notifications),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ]),
+                ProfileBar(
+                  usertype: "Super User",
+                  name: "Monesh D",
                 ),
                 SizedBox(
                   height: 10,
@@ -215,10 +178,30 @@ class _HomeState extends State<Home> {
                   // physics: const AlwaysScrollableScrollPhysics(),
                   // shrinkWrap: true,
                   children: [
-                    SurveyCard(),
-                    SurveyCard(),
-                    SurveyCard(),
-                    SurveyCard()
+                    SurveyCard(
+                      surveyname: "Lok Sabha 2024",
+                      location: "Anna Nagar",
+                      deadline: "30-12-2023",
+                      participant: "100k",
+                    ),
+                    SurveyCard(
+                      surveyname: "Health Survey - 1",
+                      deadline: "19-11-2023",
+                      location: "Harbour",
+                      participant: "50k",
+                    ),
+                    SurveyCard(
+                      surveyname: "General-2",
+                      deadline: "12-10-2023",
+                      location: "Kolathur",
+                      participant: "50k",
+                    ),
+                    SurveyCard(
+                      surveyname: "9 Years of Modi",
+                      deadline: "08-10-2023",
+                      location: "Chepauk",
+                      participant: "10k",
+                    )
                   ],
                 ),
               ],
