@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:surveyhub/surveyreport.dart';
+import 'package:get/get.dart';
+import 'package:surveyhub/login.dart';
 
 class SurveyCard extends StatefulWidget {
   SurveyCard({this.surveyname, this.deadline, this.participant, this.location});
@@ -180,43 +183,55 @@ class _ProfileBarState extends State<ProfileBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: Colors.blue[200]),
       child: Column(children: [
         SizedBox(
-          height: 30,
+          height: 45,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                Icon(Icons.person),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(usertype),
-                      Text(
-                        name,
-                        style: TextStyle(
-                            color: Color(0xFF000B23),
-                            fontWeight: FontWeight.w600),
-                      )
-                    ],
+        Padding(
+          padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.person),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(usertype),
+                        Text(
+                          name,
+                          style: TextStyle(
+                              color: Color(0xFF000B23),
+                              fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Icon(Icons.search),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(Icons.notifications),
-                )
-              ],
-            )
-          ],
+                ],
+              ),
+              Row(
+                children: [
+                  Icon(Icons.notifications),
+                  InkWell(
+                    onTap: () {
+                      FirebaseAuth.instance
+                          .signOut()
+                          .then((value) => Get.offAll(() => LoginPage()));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(Icons.power_settings_new),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ]),
     );

@@ -1,8 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:surveyhub/Home.dart';
+import 'package:surveyhub/PhoneLoginScreen.dart';
+import 'package:surveyhub/Screens/Profile/profile_controller.dart';
+import 'package:surveyhub/login.dart';
 import 'package:surveyhub/nav.dart';
 
-void main() {
+void main() async {
+    WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -12,13 +20,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final currentUser = FirebaseAuth.instance.currentUser;
+
+      final controller = Get.put<ProfileController>(ProfileController());
+    return GetMaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: ButtomNavigationBar());
+        home: LoginPage());
+        // home: PhoneLoginScreen());
+        // home: ButtomNavigationBar());
   }
 }
 

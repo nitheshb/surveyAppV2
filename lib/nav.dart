@@ -3,9 +3,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 import 'package:surveyhub/Home.dart';
 import 'package:surveyhub/reports.dart';
-
-import 'addsurvey.dart';
-import 'surveylist.dart';
+import 'package:surveyhub/surveylist.dart';
 
 class ButtomNavigationBar extends StatefulWidget {
   @override
@@ -33,8 +31,6 @@ class _ButtomNavigationBarState extends State<ButtomNavigationBar> {
         onPageChanged: (index) {
           setState(() => _currentIndex = index);
         },
-        // children: <Widget>[],
-        // children: <Widget>[AddSurveyorHome()],
         children: <Widget>[Home(), SurveyList(), Home(), Reports()],
       )),
       bottomNavigationBar: SafeArea(
