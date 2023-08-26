@@ -2,6 +2,7 @@
 //
 import 'package:flutter/material.dart';
 import 'package:surveyhub/Components.dart';
+import 'package:surveyhub/addsurvey.dart';
 
 class SurveyList extends StatefulWidget {
   const SurveyList({super.key});
@@ -50,10 +51,21 @@ class _SurveyListState extends State<SurveyList> {
                     )),
                     Row(
                       children: [
-                        Icon(Icons.menu),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Icon(Icons.add),
+                        // Icon(Icons.menu),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AddSurveyHome()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(
+                              Icons.add,
+                              size: 30,
+                            ),
+                          ),
                         )
                       ],
                     )
