@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 import 'package:surveyhub/Home.dart';
+import 'package:surveyhub/addsurvey.dart';
+import 'package:surveyhub/adduser.dart';
 
 class ButtomNavigationBar extends StatefulWidget {
   @override
@@ -29,7 +31,8 @@ class _ButtomNavigationBarState extends State<ButtomNavigationBar> {
         onPageChanged: (index) {
           setState(() => _currentIndex = index);
         },
-        children: <Widget>[Home()],
+        children: <Widget>[AddSurveyHome()],
+        // children: <Widget>[AddSurveyorHome()],
       )),
       bottomNavigationBar: SafeArea(
         child: BottomNavyBar(
