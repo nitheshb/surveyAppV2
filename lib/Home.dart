@@ -125,20 +125,23 @@ class _HomeState extends State<Home> {
                                   style: TextStyle(
                                       fontSize: 18, fontWeight: FontWeight.w600),
                                 ),
-                                Text("3 Constitutions")
+                                SizedBox(height: 3),
+                                Text("3 Items")
                               ]),
                           SizedBox(
                             height: 10,
                           ),
-                          Row(
-                            children: [
-                              Icon(Icons.menu),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Icon(Icons.add),
-                              )
-                            ],
-                          )
+                          // Center(
+                          //   child: Row(
+                          //     children: [
+                             
+                          //       Padding(
+                          //         padding: const EdgeInsets.all(8.0),
+                          //         child: Icon(Icons.add),
+                          //       )
+                          //     ],
+                          //   ),
+                          // )
                         ],
                       ),
                     ),

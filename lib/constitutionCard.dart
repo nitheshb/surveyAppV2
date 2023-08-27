@@ -1,26 +1,26 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:surveyhub/surveypage.dart';
+import 'package:surveyhub/surveylist.dart';
 import 'package:surveyhub/surveyreport.dart';
 import 'package:get/get.dart';
 import 'package:surveyhub/login.dart';
 
-class SurveyCard extends StatefulWidget {
-  SurveyCard({this.surveyname, this.deadline, this.participant, this.location});
+class ConstitutionCard extends StatefulWidget {
+  ConstitutionCard({this.surveyname, this.deadline, this.participant, this.location});
   final surveyname;
   final location;
   final deadline;
   final participant;
   @override
-  State<SurveyCard> createState() => _SurveyCardState(
+  State<ConstitutionCard> createState() => _ConstitutionCardState(
       surveyname: surveyname,
       deadline: deadline,
       location: location,
       participant: participant);
 }
 
-class _SurveyCardState extends State<SurveyCard> {
-  _SurveyCardState(
+class _ConstitutionCardState extends State<ConstitutionCard> {
+  _ConstitutionCardState(
       {this.surveyname, this.deadline, this.participant, this.location});
   final surveyname;
   final location;
@@ -31,16 +31,16 @@ class _SurveyCardState extends State<SurveyCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10.0),
-      child:  GestureDetector(
+      padding: const EdgeInsets.only(top: 5.0),
+      child:   GestureDetector(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SurveyPage()));
+                                    builder: (context) => SurveyList()));
                           },
         child: Container(
-          height: 130,
+          height: 100,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(20)),
               color: Colors.white),
@@ -55,28 +55,18 @@ class _SurveyCardState extends State<SurveyCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          surveyname,
+                          location,
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w600),
+                              fontSize: 16, fontWeight: FontWeight.w600),
                         ),
-                        Text(location),
+                        // Text(surveyname),
                       ],
                     ),
-                    Center(
-                        // onTap: () {
-                        //     Navigator.push(
-                        //         context,
-                        //         MaterialPageRoute(
-                        //             builder: (context) => SurveyReportPage(location: location, surveyname: surveyname ,)));
-                        //   },
-                      child: Padding(
-                        padding: const EdgeInsets.only(left:8.0, right: 16, top: 2, bottom: 2),
-                        child: Icon(Icons.arrow_forward_ios),
-                      ))
+                    Icon(Icons.mode_edit_outline_outlined)
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Container(
                   color: Colors.grey[200],
@@ -84,7 +74,7 @@ class _SurveyCardState extends State<SurveyCard> {
                   height: 1,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,30 +96,22 @@ class _SurveyCardState extends State<SurveyCard> {
                             fontWeight: FontWeight.w500,
                           ),
                         ))),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SurveyReportPage(location: location, surveyname: surveyname ,)));
-                          },
-                          child: Container(
-                          width: 109,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
-                            color: Color.fromRGBO(233, 97, 97, 0.1),
-                          ),
-                          child: Center(
-                              child: Text(
-                            "View Reports",
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color.fromRGBO(233, 97, 97, 1),
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ))),
+                           Container(
+                        width: 109,
+                        height: 25,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: Color.fromRGBO(142, 97, 233, 0.1),
                         ),
+                        child: Center(
+                            child: Text(
+                          "3 Surveys",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF8E61E9),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ))),
                   ],
                 )
               ],

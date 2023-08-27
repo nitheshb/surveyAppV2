@@ -4,14 +4,14 @@
 import 'package:flutter/material.dart';
 import 'package:surveyhub/Components.dart';
 
-class AddSurveyorHome extends StatefulWidget {
-  const AddSurveyorHome({super.key});
+class AddConstitutionHome extends StatefulWidget {
+  const AddConstitutionHome({super.key});
 
   @override
-  State<AddSurveyorHome> createState() => _AddSurveyorHomeState();
+  State<AddConstitutionHome> createState() => _AddConstitutionHomeState();
 }
 
-class _AddSurveyorHomeState extends State<AddSurveyorHome> {
+class _AddConstitutionHomeState extends State<AddConstitutionHome> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _surveyTitle = "";
   String _selectedPriority = "Anna Nagar";
@@ -43,7 +43,7 @@ class _AddSurveyorHomeState extends State<AddSurveyorHome> {
           padding: const EdgeInsets.only(bottom: 2.0),
           child: ElevatedButton(
             onPressed: _saveForm,
-            child: Text("Save Surveyor"),
+            child: Text("Add Constitution"),
           ),
         ),
       ),
@@ -62,12 +62,12 @@ class _AddSurveyorHomeState extends State<AddSurveyorHome> {
                       Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Register New Surveyor",
+                            Text("Add New Constitution",
                               style: TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.w600),
                             ),
                             SizedBox(height: 4,),
-                            Text("10 Items")
+                            Text("3 Fields")
                           ]),
                       SizedBox(
                         height: 10,
@@ -105,10 +105,10 @@ class _AddSurveyorHomeState extends State<AddSurveyorHome> {
                              crossAxisAlignment: CrossAxisAlignment.start,
                              children: <Widget>[
                                TextFormField(
-                                 decoration: InputDecoration(labelText: "Name"),
+                                 decoration: InputDecoration(labelText: "Constitution Name"),
                                  validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Please enter a surveyor Name.";
+                      return "Please enter a Constitution Name.";
                     }
                     return null;
                                  },
@@ -118,10 +118,10 @@ class _AddSurveyorHomeState extends State<AddSurveyorHome> {
                                ),
                                SizedBox(height: 8.0),
                                TextFormField(
-                                 decoration: InputDecoration(labelText: "S/O"),
+                                 decoration: InputDecoration(labelText: "District"),
                                  validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Please enter father Name.";
+                      return "Please enter District.";
                     }
                     return null;
                                  },
@@ -131,10 +131,10 @@ class _AddSurveyorHomeState extends State<AddSurveyorHome> {
                                ),
                                SizedBox(height: 8.0),
                                TextFormField(
-                                 decoration: InputDecoration(labelText: "Phone No"),
+                                 decoration: InputDecoration(labelText: "State"),
                                  validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Please enter a phone no.";
+                      return "Please enter a state.";
                     }
                     return null;
                                  },
@@ -144,10 +144,10 @@ class _AddSurveyorHomeState extends State<AddSurveyorHome> {
                                ),
                                SizedBox(height: 8.0),
                                TextFormField(
-                                 decoration: InputDecoration(labelText: "Email"),
+                                 decoration: InputDecoration(labelText: "Incharge Name"),
                                  validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Please enter a email.";
+                      return "Please enter a Incharge Name.";
                     }
                     return null;
                                  },
@@ -155,19 +155,7 @@ class _AddSurveyorHomeState extends State<AddSurveyorHome> {
                     _surveyTitle = value!;
                                  },
                                ),
-                               SizedBox(height: 8.0),
-                               TextFormField(
-                                 decoration: InputDecoration(labelText: "Address"),
-                                 validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Please enter a address";
-                    }
-                    return null;
-                                 },
-                                 onSaved: (value) {
-                    _surveyTitle = value!;
-                                 },
-                               ),
+                             
                                SizedBox(height: 20.0),
                                
                            

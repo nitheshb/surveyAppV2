@@ -2,16 +2,18 @@
 //
 import 'package:flutter/material.dart';
 import 'package:surveyhub/Components.dart';
+import 'package:surveyhub/addConstitution.dart';
 import 'package:surveyhub/addsurvey.dart';
+import 'package:surveyhub/constitutionCard.dart';
 
-class SurveyList extends StatefulWidget {
-  const SurveyList({super.key});
+class ConstitutionList extends StatefulWidget {
+  const ConstitutionList({super.key});
 
   @override
-  State<SurveyList> createState() => _SurveyListState();
+  State<ConstitutionList> createState() => _ConstitutionListState();
 }
 
-class _SurveyListState extends State<SurveyList> {
+class _ConstitutionListState extends State<ConstitutionList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,11 +40,11 @@ class _SurveyListState extends State<SurveyList> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "All Surveys",
+                                "All Constitutions",
                                 style: TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.w600),
                               ),
-                              Text("3 Active Surveys")
+                              Text("3 Active Items")
                             ]),
                         SizedBox(
                           height: 10,
@@ -57,14 +59,14 @@ class _SurveyListState extends State<SurveyList> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => AddSurveyHome()));
+                                    builder: (context) => AddConstitutionHome()));
                           },
                           child: Row(
                             children: [
                               SizedBox(width: 4),
                               Icon(Icons.add, color:Color.fromRGBO(233, 97, 97, 1)),
                               Text(
-                                              "Add Survey",
+                                              "Add Constitution",
                                               style: const TextStyle(
                               fontSize: 12,
                               color: Color.fromRGBO(233, 97, 97, 1),
@@ -82,25 +84,25 @@ class _SurveyListState extends State<SurveyList> {
                   // physics: const AlwaysScrollableScrollPhysics(),
                   // shrinkWrap: true,
                   children: [
-                    SurveyCard(
-                      surveyname: "Lok Sabha 2024",
+                    ConstitutionCard(
+                      surveyname: "Nellore-Rural",
                       location: "Anna Nagar",
                       deadline: "30-12-2023",
                       participant: "100k",
                     ),
-                    SurveyCard(
-                      surveyname: "Health Survey - 1",
+                    ConstitutionCard(
+                      surveyname: "Nellore-Town",
                       deadline: "19-11-2023",
                       location: "Harbour",
                       participant: "50k",
                     ),
-                    SurveyCard(
+                    ConstitutionCard(
                       surveyname: "General-2",
                       deadline: "12-10-2023",
                       location: "Kolathur",
                       participant: "50k",
                     ),
-                    SurveyCard(
+                    ConstitutionCard(
                       surveyname: "9 Years of Modi",
                       deadline: "08-10-2023",
                       location: "Chepauk",

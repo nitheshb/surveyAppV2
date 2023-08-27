@@ -26,10 +26,17 @@ class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
   List<String> images = [
-    'assets/images/onboard.png',
-      'assets/images/onboard.png',
-        'assets/images/onboard.png',
-    'assets/images/GreenLogo.png',
+    
+      'assets/images/1.png',
+      'assets/images/1.png',
+   
+      // 'https://dashtechinc.com/wp-content/uploads/2020/02/Email-Marketing.png',
+      'assets/images/2.png',
+      'assets/images/3.png',
+
+        // 'https://images.ctfassets.net/xj0skx6m69u2/KmgNRa2xROopqQp43uA2o/f2c9fe89e15717b7e734a73fa56ae19e/stockfresh_9557526_data-analytics-systems-software-for-mobile-devices_sizeS.jpg?fm=jpg&w=648&h=426&fit=fill&f=Center&q=85',
+        // 'https://dashtechinc.com/wp-content/uploads/2020/03/Consumer-Product-Affinity-Analysis-for-Marketing-Promotions.png'
+
     // 'assets/images/login3.png',
     // 'assets/images/login4.png'
   ];
@@ -59,7 +66,7 @@ class LoginPage extends StatelessWidget {
                               child: Image.asset(
                                 e.value,
                                 height:
-                                    MediaQuery.of(context).size.height * 0.300,
+                                    MediaQuery.of(context).size.height * 0.200,
                               ),
                               opacity:
                                   controller.activeIndex.value == e.key ? 1 : 0,
@@ -67,13 +74,15 @@ class LoginPage extends StatelessWidget {
                     }).toList(),
                   ),
                 ),
-                sizeBox(20, 0),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: FxText.titleLarge(
-                    "Login",
-                    fontWeight: 700,
-                    // color: Get.theme.primary,
+                sizeBox(0, 0),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: FxText.titleLarge(
+                      "People Pulse",
+                      fontWeight: 700,
+                      // color: Get.theme.primary,
+                    ),
                   ),
                 ),
                 Padding(
